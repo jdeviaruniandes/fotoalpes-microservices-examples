@@ -8,6 +8,7 @@ from sender import send_user
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mnt/usarios.db'
+app.app_context().push()
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)

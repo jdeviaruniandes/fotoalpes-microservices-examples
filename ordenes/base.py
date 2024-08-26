@@ -10,6 +10,7 @@ from updater import update_product
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////mnt/ordenes.db'
+app.app_context().push()
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
 api = Api(app)
